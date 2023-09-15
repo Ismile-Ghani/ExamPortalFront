@@ -1,1 +1,48 @@
-<p>registration works!</p>
+<mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <h2>Sign Up</h2>
+        <mat-error>
+          
+        </mat-error>
+        <mat-form-field>
+          <input matInput placeholder="Enter User Name" name="username" [(ngModel)] ="user.username" required>
+          <mat-error>
+            
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Enter User Password"  name="password"  [(ngModel)] ="user.password" required>
+          <mat-error>
+        
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Enter First Name"  name="firstName" [(ngModel)] ="user.firstname" required>
+            <mat-error>
+          
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Enter Last Name"  name="lastName" [(ngModel)] ="user.lastname" required>
+            <mat-error>
+          
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="email" placeholder="Enter Email Id"  name="email" [(ngModel)] ="user.email" required>
+            <mat-error>
+          
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="number" placeholder="Enter Mobile No"  name="mobile" [(ngModel)] ="user.phone" required>
+            <mat-error>
+          
+            </mat-error>
+          </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" >Sign Up</button>
+        <button mat-raised-button color="accent" >Reset</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
