@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
 export class RegistrationComponent {
   
 
-  constructor(private userService:UserService){}
+  constructor(private userService:UserService,private snack:MatSnackBar){}
 
   user:any = {
     "username" :"",
@@ -21,14 +22,29 @@ export class RegistrationComponent {
   }
 
   onSubmit(){
-    alert("in form")
+    if(this.user.username == null || this.user.username == '')
+    {
+      this.snack.open('User Name is required','',{
+        duration:3000,
+        verticalPosition:'top'
+      });
+      return;
+    }
     this.userService.addUser(this.user).subscribe(
       (data)=>{
-          alert('Successfully Registered')
+        this.snack.open('Successsfully Registered','',{
+          duration:3000,
+          verticalPosition:'top'
+        });
+        
           console.log(data)
       },
       (error)=>{
-          alert('Something went wrong')
+        this.snack.open('Something went wrong','',{
+          duration:3000,
+          verticalPosition:'top'
+        });
+        
           console.log(error)
       }
 

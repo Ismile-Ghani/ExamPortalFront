@@ -10,11 +10,26 @@ import { RegistrationComponent } from './components/registration/registration.co
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginComponent } from './components/login/login.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { authInterceptorProviders } from './service/auth.interceptor';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent,
+    NavbarComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -24,10 +39,14 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     MatCardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule
 
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

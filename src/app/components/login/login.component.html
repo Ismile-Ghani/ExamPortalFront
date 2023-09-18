@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-content>
+      <form (ngSubmit)="doSubmit()">
+        
+        <h2>Login</h2>
+        <mat-error class="test-nt" *ngIf="value != null" >
+          {{ value }}
+        </mat-error>
+        <mat-form-field>
+          <input matInput placeholder="Enter User Name" name="username" [(ngModel)]="loginData.username"  required>
+          <mat-error>
+            
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Enter User Password"  name="password" [(ngModel)]="loginData.password"  required>
+          <mat-error>
+        
+          </mat-error>
+        </mat-form-field>
+        
+        <button type="submit" mat-raised-button color="primary" >Login</button>
+        <button mat-raised-button color="accent" type="reset" class="mx-5" >Reset</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+ .toolbar{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  
+ }
