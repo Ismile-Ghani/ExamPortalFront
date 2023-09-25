@@ -10,10 +10,10 @@ import { LoginService } from 'src/app/service/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  value:any
+  value:any 
   loginData:any = {
-    "username" :"",
-    "password" :""
+    "username" : null,
+    "password" : null
   }
   constructor(private snack:MatSnackBar,private loginService:LoginService,private router:Router,private activatedRoute:ActivatedRoute){
      
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     }
 
     //generate token
-if(this.loginData.username != null && this.loginData.password != null)
+if(this.loginData != null)
 {
     this.loginService.createToken(this.loginData).subscribe(
       (data:any)=>{

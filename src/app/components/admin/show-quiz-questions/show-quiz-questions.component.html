@@ -1,0 +1,44 @@
+
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mt-2"><u>List of Question in this Quiz:  <b>{{quizData.title |uppercase}}</b></u></h1>
+            <mat-card class="my-4" *ngFor="let q of questionData;let i = index;">
+               
+                <mat-card-content>
+                    <p><b>Q.{{i+1}})</b> <span class="mx-1" [innerHTML]="q.content"></span></p>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>1) </b>{{q.option1}} </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>2) </b>{{q.option2}} </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><b>3) </b>{{q.option3}} </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>4) </b>{{q.option4}} </p>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                            <p><b>Correct Answer:  </b>{{q.answer}}</p>
+                        
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="container text-center my-2">
+                        <button  mat-button color="primary" >Update</button>
+                        <button mat-button color="warn"  (click)="delete(q.quesId,i)">Delete</button>
+                    </div>
+                </mat-card-actions>
+            </mat-card> 
+            <div class="container text-center my-5">
+                <button type="submit" mat-raised-button color="primary"  [routerLink]="['/admin-dashboard/add-question']" [queryParams]="{q : myjson.stringify(quizData) }">Add Question</button>
+            </div>
+        </div>
+    </div>
+</div>

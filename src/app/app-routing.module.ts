@@ -6,6 +6,14 @@ import { UserDashboardComponent } from './components/user/user-dashboard/user-da
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { adminGuard } from './service/guard/admin.guard';
 import { normalUsersGuard } from './service/guard/normal/normal-users.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { WelcomeComponent } from './components/admin/welcome/welcome.component';
+import { CategoryComponent } from './components/admin/category/category.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import { ShowQuizzesComponent } from './components/admin/show-quizzes/show-quizzes.component';
+import { AddQuizComponent } from './components/admin/add-quiz/add-quiz.component';
+import { ShowQuizQuestionsComponent } from './components/admin/show-quiz-questions/show-quiz-questions.component';
+import { AddQuestionComponent } from './components/admin/add-question/add-question.component';
 
 const routes: Routes = [
   {
@@ -27,8 +35,41 @@ const routes: Routes = [
   {
     path:'admin-dashboard',
     component:AdminDashboardComponent,
-    pathMatch:'full',
-    canActivate:[adminGuard]
+    canActivate:[adminGuard],
+    children:[
+      {
+        path:'',
+        component:WelcomeComponent
+      },
+      {
+        path:'profile',
+        component:ProfileComponent
+      },
+      {
+        path:'category',
+        component:CategoryComponent
+      },
+      {
+        path:'add-category',
+        component:AddCategoryComponent
+      },
+      {
+        path:'show-quizzes',
+        component:ShowQuizzesComponent
+      },
+      {
+        path:'add-quizzes',
+        component:AddQuizComponent
+      },
+      {
+        path:'show-questions',
+        component:ShowQuizQuestionsComponent
+      },
+      {
+        path:'add-question',
+        component:AddQuestionComponent
+      }
+    ]
   }
 ];
 

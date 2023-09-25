@@ -1,0 +1,45 @@
+<mat-card class="my-4">
+    <mat-card-content>
+        <!-- <div fxFlex="0.5rem" fxLayout="row" fxLayoutAlign="end right" fxFill>
+            <mat-icon>close</mat-icon>
+        </div> -->
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+
+                    <form (ngSubmit)="doAction()">
+        
+                        <h2 class="text-center">Edit Category</h2>
+                        {{data | json}}
+                        <mat-error >
+                          
+                        </mat-error>
+                        <mat-form-field class="custom" appearance="outline">
+                          <mat-label>Title</mat-label>  
+                          <input matInput placeholder="Enter Title of Category" name="title" [(ngModel)] ="data.row.title"  required>
+                          <mat-error>
+                            
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="custom" appearance="outline">
+                            <mat-label>Description</mat-label>  
+                          <textarea matInput type="password" placeholder="Enter Category Description "  name="description" [(ngModel)] ="data.row.description" required></textarea>
+                          <mat-error>
+                        
+                          </mat-error>
+                        </mat-form-field>
+                        <div class="text-center">
+                            <button mat-raised-button color="primary" type="submit" [mat-dialog-close]="true" cdkFocusInitial >Edit</button>
+                            <button mat-raised-button color="warn" class="mx-5" mat-dialog-close >Cancel</button>
+                        </div>   
+                    </form>
+                     
+                    
+                </div>
+            </div>
+        </div>
+      
+        
+      
+    </mat-card-content>
+  </mat-card>

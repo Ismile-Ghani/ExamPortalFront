@@ -1,0 +1,74 @@
+<mat-card *ngIf="userDetails" class="mt-4">
+<h1 class="text-center mt-2">Your Profile Details</h1>
+<mat-card-content>
+<div class="bootstrap-wrapper">
+<div class="container">
+    <div class="container text-center">
+        
+        <img src="data:image/png;base64,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" alt="default-profile" class="profile-img" />
+    </div>
+    
+
+    <h1 class="text-center">{{userDetails.firstname}} {{userDetails.lastname}}</h1>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <table class="table table-striped">
+                
+                <tbody>
+                  <tr>
+                    
+                    <td>User Name</td>
+                    <td>{{userDetails.username}}</td>
+                </tr>
+
+                <tr>
+
+                    <td>User Id</td>
+                    <td>{{userDetails.id}}</td>
+                </tr>
+
+                <tr>
+
+                    <td>Mobile Number</td>
+                    <td>{{userDetails.phone}}</td>
+                </tr>
+
+                <tr>
+
+                    <td>Email Id</td>
+                    <td>{{userDetails.email}}</td>
+                </tr>
+
+                <tr>
+
+                    <td>Status</td>
+                    <td>{{userDetails.enabled ? "ACTIVE" : "INACTIVE"}}</td>
+                
+                    
+                </tr>
+                  
+                  
+                </tbody>
+              </table>
+
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+
+
+</mat-card-content>
+
+<div class="text-center my-5">
+            
+    <button  mat-raised-button color="primary" >Update</button>
+    <button mat-raised-button color="warn" class="mx-5">Delete</button>
+
+</div>
+
+
+</mat-card>

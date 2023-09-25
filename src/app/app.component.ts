@@ -9,8 +9,8 @@ import { LoginService } from './service/login.service';
 export class AppComponent {
   title = 'ExamPortalFront';
 constructor(private login:LoginService){}
-@HostListener('window:beforeunload', ['$event'])
+/* @HostListener('window:beforeunload', ['$event'])
 beforeUnloadHander() {
     this.login.logout();
-}
+} */
 }

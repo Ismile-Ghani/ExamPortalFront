@@ -19,6 +19,27 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { authInterceptorProviders } from './service/auth.interceptor';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AdminSidebarComponent } from './components/admin/sidebar/admin-sidebar/admin-sidebar.component';
+import {MatListModule} from '@angular/material/list';
+import { WelcomeComponent } from './components/admin/welcome/welcome.component';
+import {MatTableModule} from '@angular/material/table';
+import { CategoryComponent } from './components/admin/category/category.component';
+import { AddCategoryComponent } from './components/admin/add-category/add-category.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditDialogOverviewComponent } from './components/admin/edit-dialog-overview/edit-dialog-overview.component';
+import { ShowQuizzesComponent } from './components/admin/show-quizzes/show-quizzes.component';
+import { EditQuizDialogComponent } from './components/admin/edit-quiz-dialog/edit-quiz-dialog.component';
+import { AddQuizComponent } from './components/admin/add-quiz/add-quiz.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ShowQuizQuestionsComponent } from './components/admin/show-quiz-questions/show-quiz-questions.component';
+import { AddQuestionComponent } from './components/admin/add-question/add-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
+
+
 
 
 
@@ -29,7 +50,18 @@ import { UserDashboardComponent } from './components/user/user-dashboard/user-da
     LoginComponent,
     NavbarComponent,
     AdminDashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    AdminSidebarComponent,
+    WelcomeComponent,
+    CategoryComponent,
+    AddCategoryComponent,
+    EditDialogOverviewComponent,
+    ShowQuizzesComponent,
+    EditQuizDialogComponent,
+    AddQuizComponent,
+    ShowQuizQuestionsComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +75,16 @@ import { UserDashboardComponent } from './components/user/user-dashboard/user-da
     MatButtonModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatTableModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    CKEditorModule,
+    
+    
 
   ],
   providers: [authInterceptorProviders],
